@@ -1,0 +1,25 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.Group?>
+<GridPane fx:controller="com.tong.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+          styleClass="root">
+    <stylesheets>
+        <URL value="@main.css"/>
+    </stylesheets>
+    <padding>
+        <Insets top="25" right="25" left="25" bottom="25"/>
+    </padding>
+    <Label text="color名称前缀:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="tf_prefix_name" promptText="例如:color_xx_" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Label text="保存文件名:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="tf_save_name" promptText="例如colors" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <HBox GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"  alignment="CENTER">
+        <Group>
+            <Button fx:id="btn_select_file" text="选择解析文件" onAction="#selectFile" visible="true"/>
+            <ProgressIndicator fx:id="pi_decode_file" progress="0.25" visible="false"/>
+        </Group>
+    </HBox>
+</GridPane>
