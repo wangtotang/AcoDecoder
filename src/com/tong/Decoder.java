@@ -63,11 +63,11 @@ public class Decoder {
                         raf.readWord();
                         break;
                     }
-                    colors[j] = raf.readWord();
-                    color+=Integer.toHexString(colors[j]/256);
-                    if(colors[j]==0){
+                    colors[j] = raf.readWord()/256;
+                    if(colors[j]<=15){
                         color+="0";
                     }
+                    color+=Integer.toHexString(colors[j]);
                 }
                 while(raf.readWord()!=0);
                 int length = raf.readWord();
